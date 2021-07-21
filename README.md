@@ -1,12 +1,14 @@
+Easily create a new keypair in AWS and drop the local key into your working directory.
+
 # AWS Local Keypair
 
-Easily create a new keypair in AWS and drop the local key into your working directory.
+To limit blast radius I provision new keys for each atomic set of infrastructure I create in terraform.
 
 ## Useage
 
 ```hcl
 module "key" {
-  source      = "git@github.com:KyleOndy/terraform-aws-local-keypair.git"
+  source      = "git@github.com:KyleOndy/terraform-aws-local-keypair.git?ref=v0.1.0"
   name_prefix = "gitlab-runner"
   tags        = { owner = "Kyle Ondy" }
 }
