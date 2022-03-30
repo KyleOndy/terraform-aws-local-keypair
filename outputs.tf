@@ -3,5 +3,6 @@ output "name" {
 }
 
 output "filename" {
-  value = local_file.private_key.filename
+  value     = local_sensitive_file.private_key.filename
+  sensitive = true
 }

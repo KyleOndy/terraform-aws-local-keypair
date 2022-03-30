@@ -8,10 +8,10 @@ locals {
   key_name = "${var.name_prefix}-${random_pet.this.id}"
 }
 
-resource "local_file" "private_key" {
-  sensitive_content = tls_private_key.this.private_key_pem
-  filename          = "${local.key_name}.key"
-  file_permission   = "0600"
+resource "local_sensitive_file" "private_key" {
+  content         = tls_private_key.this.private_key_pem
+  filename        = "${local.key_name}.key"
+  file_permission = "0600"
 }
 
 resource "aws_key_pair" "this" {
