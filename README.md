@@ -8,8 +8,8 @@ To limit blast radius I provision new keys for each atomic set of infrastructure
 
 ```hcl
 module "key" {
-  source      = "git@github.com:KyleOndy/terraform-aws-local-keypair.git?ref=v0.1.0"
-  name_prefix = "gitlab-runner"
+  source      = "git@github.com:KyleOndy/terraform-aws-local-keypair.git?ref=v0.2.0"
+  name_prefix = "foobar"
   tags        = { owner = "Kyle Ondy" }
 }
 
